@@ -33,7 +33,14 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        app.receivedEvent('deviceready hai!');
+	var telephoneNumber = cordova.require("cordova/plugin/telephonenumber");
+	telephoneNumber.get(function(result) {
+        console.log("resulttttttt = " + result);
+    }, function() {
+        console.log("errorrrrrrrrrr");
+    });
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {

@@ -31,16 +31,26 @@
     </head>
     <body>
         <div class="app">
-            <h1>PhoneGap</h1>
+            <h1>Jiten PhoneGap</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
             </div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/telephonenumber.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
+	console.log("My Logggggggg 1111111111");
             app.initialize();
+	console.log("My Logggggggg 2222222222");
+	var telephoneNumber = cordova.require("cordova/plugin/telephonenumber");
+	console.log("My Logggggggg 3333333333");
+	telephoneNumber.get(function(result) {
+        	console.log("result = " + result);
+	    }, function() {
+		console.log("error");
+	    });
         </script>
     </body>
 </html>
